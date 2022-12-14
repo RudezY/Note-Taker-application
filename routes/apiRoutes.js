@@ -38,6 +38,8 @@ router.post('/', function (req, res) {
         res.status(500).json('Your note was not Saved');
     }
 });
+
+// delete notes from db
 router.delete("/:id", function(req, res) {
    let data = fs.readFileSync('./db/db.json', 'utf8');
    const dataFromJSON = JSON.parse(data)
@@ -55,6 +57,6 @@ router.delete("/:id", function(req, res) {
   res.json(newNotes);
 });
 
-// BONUS portion be able to delete note.
+
 
 module.exports = router;
